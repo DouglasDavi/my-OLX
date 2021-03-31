@@ -6,7 +6,6 @@ import {isLogged} from '../../../helpers/AuthHandler'
 
 const Header = () =>{
     let logged = isLogged()
-    console.log('ta logado?'+logged)
     return(
         <HeaderArea>
            <div className="container">
