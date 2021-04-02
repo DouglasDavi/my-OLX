@@ -24,8 +24,10 @@ const Page = () =>{
             setError(json.error)
         }else{
             doLogin(json.token, rememberPassword)
-            window.location.href = '/'
+            window.location.href = '/';
         }
+
+        setDisabled(false)
     }
 
     return(
