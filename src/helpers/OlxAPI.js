@@ -38,7 +38,7 @@ const apiFetchGet = async (endpoint, body = []) =>{
         }
     }
 
-    const res = await fetch(`${BASEAPI+endpoint}?${qs.stringfy(body)}`)
+    const res = await fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`)
     const json = await res.json();
 
     if(json.notallowed){
@@ -55,8 +55,15 @@ const OlxAPI = {
         const json = await apiFetchPost(
             '/user/signin',
             {email, password}
-        ) 
-        return json
+        ); 
+        return json;
+    },
+
+    getStates:async()=>{
+        const json = await apiFetchGet(
+            '/states'
+        )
+        return json.states;
     }
 }
 //criei uma função que retornar o objeto const OlxAPI
