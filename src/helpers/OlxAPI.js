@@ -78,6 +78,13 @@ const OlxAPI = {
             '/categories'
         )
         return json.categories
+    },
+    getAds: async (options)=>{
+        const json = await apiFetchGet(
+            '/ad/list',
+            options
+        )
+        return json
     }
 }
 //criei uma função que retornar o objeto const OlxAPI
