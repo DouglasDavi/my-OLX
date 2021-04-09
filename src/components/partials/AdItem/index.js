@@ -2,7 +2,7 @@ import React from 'react'
 import{Link} from 'react-router-dom'
 import {Item} from './styled'
 
-export default(props) =>{
+function AdItem (props) {
     let price = '';
     if(props.data.priceNegotiable){
         price = 'Preço Negociável';
@@ -21,4 +21,6 @@ export default(props) =>{
         </Item>
     )
 }
+
+export default AdItem
 
