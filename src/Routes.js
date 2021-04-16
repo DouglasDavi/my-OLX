@@ -9,6 +9,8 @@ import NotFound from './pages/NotFound'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import AdPage from './pages/AdPage'
+import AddAd from './pages/AddAd'
+import Ads from './pages/Ads'
 
 function Router (){
     return (
@@ -29,7 +31,10 @@ function Router (){
                 <AdPage />
             </RounteHandler>
             <RounteHandler private path="/post-an-ad">
-                <About />
+                <AddAd />
+            </RounteHandler>
+            <RounteHandler private path="/ads">
+                <Ads />
             </RounteHandler>
             <RounteHandler>
                 <NotFound />
