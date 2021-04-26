@@ -49,12 +49,7 @@ const Page = () =>{
                 </BreadChumb>
             }
             <PageArea >
-            {loading &&
-                <div>True</div>
-            }
-            {!loading &&
-                <div>False</div>
-            }
+            
                 <div className="leftSide">
                     <div className="box">
                         <div className="adImage">

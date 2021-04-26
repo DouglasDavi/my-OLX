@@ -5,7 +5,6 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 import {PageArea} from './styled';
 import useApi from '../../helpers/OlxAPI';
 
-
 import {PageContaniner, PageTitle, ErrorMessage} from '../../components/MainComponents';
 
 const Page = () =>{
@@ -20,10 +19,10 @@ const Page = () =>{
     const [price, setPrice] = useState('');
     const [priceNegotiable, setPriceNegotiable] = useState(false);
     const [desc, setDesc] = useState('');
-    
+
     const [disabled, setDisabled] = useState(false);
     const [error, setError] = useState('');
-
+    
     useEffect(()=>{
         const getCategories = async ()=> {
             const cats = await api.getCategories();
@@ -52,7 +51,7 @@ const Page = () =>{
             fData.append('price', price);
             fData.append('priceneg', priceNegotiable);
             fData.append('desc', desc);
-            fData.append('cat', category);
+            fData.append('cat', category);  
 
             if(fileField.current.files.length > 0) {
                 for(let i=0;i<fileField.current.files.length;i++) {
@@ -77,12 +76,12 @@ const Page = () =>{
     }
 
     const priceMask = createNumberMask({
-        prefix:'R$ ',
-        includeThousandsSeparator:true,
-        thousandsSeparatorSymbol:'.',
-        allowDecimal:true,
+        prefix:'RS ',
+        includeThousandsSeparator: true,
+        thousandsSeparatorSymbol: '.',
+        allowDecimal: true,
         decimalSymbol:','
-    });
+    })
 
     return(
         <PageContaniner>
